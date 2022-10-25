@@ -9,6 +9,7 @@ const Client = new Discord.Client({
 });
 
 module.exports.run = async (Client, message, args, prefix) => {
+  if (!message.content.startsWith(prefix)) return;
   const { EmbedBuilder } = require("discord.js");
   const { name, memberCount } = message.guild;
 

@@ -12,7 +12,6 @@ module.exports.run = async (Client, message, args, prefix) => {
   if (!message.content.startsWith(prefix)) return;
   const { EmbedBuilder } = require("discord.js");
 
-  // Permet de
   let pollChannel = message.mentions.channels.first();
   if (!pollChannel)
     return message.channel.send(
@@ -29,8 +28,6 @@ module.exports.run = async (Client, message, args, prefix) => {
     .setTitle("Nouveau Sondage !")
     .setDescription("" + polldescription)
     .setColor("Random");
-  pollChannel.send(embedMesssage).react("👍");
-  pollChannel.send(embedMesssage).react("👎");
 
   message.channel.send({ embeds: [embedMesssage] });
 };
