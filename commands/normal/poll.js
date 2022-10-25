@@ -12,8 +12,8 @@ module.exports.run = async (Client, message, args, prefix) => {
   if (!message.content.startsWith(prefix)) return;
   const { EmbedBuilder } = require("discord.js");
 
-  let pollChannel = message.mentions.channels.first();
-  if (!pollChannel)
+  let mentionChannel = message.mentions.channels.first();
+  if (!mentionChannel)
     return message.channel.send(
       "[⚠️] Il faut que vous mentionnez le channel ! [⚠️]"
     );
@@ -21,8 +21,6 @@ module.exports.run = async (Client, message, args, prefix) => {
   let polldescription = args.slice(1).join(" ");
   if (!polldescription)
     return message.channel.send("[⚠️] Il faut ajoutez une description ! [⚠️]");
-
-  console.log(polldescription);
 
   const embedMesssage = new EmbedBuilder()
     .setTitle("Nouveau Sondage !")
