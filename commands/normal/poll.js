@@ -27,7 +27,9 @@ module.exports.run = async (Client, message, args, prefix) => {
     .setDescription("" + polldescription)
     .setColor("Random");
 
-  message.channel.send({ embeds: [embedMesssage] });
+  message.channel.send({ embeds: [embedMesssage] }).then((embedMesssage) => {
+    embedMesssage.react("👍");
+  });
 };
 
 module.exports.help = {
