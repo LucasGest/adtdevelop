@@ -60,7 +60,7 @@ Client.on("messageCreate", (message) => {
   let args = messageArray.slice(1);
 
   let commands =
-    Client.commands.get(cmd.slice(process.env.PREFIX.length)) ||
+    Client.commands.get(cmd.slice(process.env.PREFIX)) ||
     Client.commands.get(
       Client.aliases.get(cmd.slice(process.env.PREFIX.length))
     );
