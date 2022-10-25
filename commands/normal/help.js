@@ -20,7 +20,7 @@ module.exports.run = async (Client, message, args, prefix) => {
     .addFields({
       name: "Normal",
       value:
-        "`-help :` Affiche le help. `-ping :` Pong. `-poll :` Faire un sondage. `-serverinfo :` Affiche les infos du serveur.",
+        "`-help :` Affiche le help. \n `-ping :` Pong. \n `-poll :` Faire un sondage. \n `-serverinfo :` Affiche les infos du serveur.",
       inline: false,
     });
 
