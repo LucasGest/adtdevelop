@@ -60,12 +60,12 @@ Client.on("messageCreate", (message) => {
   let args = messageArray.slice(1);
 
   let commands =
-    Client.commands.get(cmd.slice(process.env.PREFIX.length)) ||
+    Client.commands.get(cmd.slice(process.env.prefix.length)) ||
     Client.commands.get(
-      Client.aliases.get(cmd.slice(process.env.PREFIX.length))
+      Client.aliases.get(cmd.slice(process.env.prefix.length))
     );
 
-  if (commands) commands.run(Client, message, args, process.env.PREFIX);
+  if (commands) commands.run(Client, message, args, process.env.prefix);
 });
 
 // Auto role
