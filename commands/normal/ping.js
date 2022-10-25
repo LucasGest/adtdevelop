@@ -9,8 +9,6 @@ const Client = new Discord.Client({
 });
 
 module.exports.run = async (Client, message, args, prefix) => {
-  // for the cmd handler
-
   if (!message.content.startsWith(prefix)) return;
 
   message.channel.send(`Trouve sa raquette`).then((msg) => {
@@ -19,6 +17,6 @@ module.exports.run = async (Client, message, args, prefix) => {
 };
 
 module.exports.help = {
-  name: "ping", // name of the cmd
-  aliases: ["ms"], // another names for the cmd
+  name: "ping",
+  aliases: [],
 };
