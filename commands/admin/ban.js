@@ -13,7 +13,7 @@ module.exports.run = async (Client, message, args, prefix) => {
       message.guild.members.cache.get(args[0]);
 
     if (user) {
-      const member = message.guild.members(user);
+      const member = user;
 
       if (member) {
         member
