@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (Client, message, args, prefix) => {
-  if (!message.member.hasPermission("BAN_MEMBERS", "ADMINISTRATOR"))
+  if (!message.member.permissions.has("BAN_MEMBERS", "ADMINISTRATOR"))
     message.channel.send(
       "Vous n'avez pas la permission d'utiliser cette commande."
     );
