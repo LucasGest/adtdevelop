@@ -11,6 +11,6 @@ const Client = new Discord.Client({
 module.exports.run = async (Client, message, args, prefix) => {};
 
 module.exports.help = {
-  name: "kick", // name of the cmd
-  aliases: ["k"], // another names for the cmd
+  name: "kick",
+  aliases: [],
 };
