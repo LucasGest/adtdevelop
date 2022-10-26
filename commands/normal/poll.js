@@ -29,6 +29,7 @@ module.exports.run = async (Client, message, args, prefix) => {
 
   message.channel.send({ embeds: [embedMesssage] }).then((embedMesssage) => {
     embedMesssage.react("👍");
+    embedMesssage.react("👎");
   });
 };
 
