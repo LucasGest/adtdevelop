@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const { EmbedBuilder } = require("discord.js");
 const fs = require("fs");
+const { ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js");
 const Client = new Discord.Client({
   intents: [
     Discord.GatewayIntentBits.Guilds,
@@ -66,6 +67,24 @@ Client.on("messageCreate", (message) => {
     );
 
   if (commands) commands.run(Client, message, args, process.env.prefix);
+});
+
+client.on(Events.InteractionCreate, async (interaction) => {
+  if (!interaction.isChatInputCommand()) return;
+
+  if (interaction.commandName === "button") {
+    const row = new ActionRowBuilder().addComponents(
+      new ButtonBuilder()
+        .setCustomId("primary")
+        .setLabel("Click me!")
+        .setStyle(ButtonStyle.Primary)
+    );
+
+    await interaction.reply({
+      content: "I think you should,",
+      components: [row],
+    });
+  }
 });
 
 // Auto role
