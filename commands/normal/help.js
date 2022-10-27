@@ -11,19 +11,24 @@ const Client = new Discord.Client({
 module.exports.run = async (Client, message, args, prefix) => {
   if (!message.content.startsWith(prefix)) return;
   const { EmbedBuilder } = require("discord.js");
-  const { name, memberCount } = message.guild;
+  const { name } = message.guild;
 
   const embedMesssage = new EmbedBuilder()
     .setTitle(`Help de ${name}`)
     .setColor("Random")
     .setThumbnail(message.guild.iconURL())
 
-    .addFields({
-      name: "Normal",
-      value:
-        "`-help :` Affiche le help. \n `-ping :` Pong. \n `-poll :` Faire un sondage. \n `-serverinfo :` Affiche les infos du serveur.",
-      inline: false,
-    });
+    .addFields(
+      {
+        name: "Normal",
+        value:
+          "`-help :` Affiche le help. \n `-ping :` Pong. \n `-poll :` Faire un sondage. \n `-serverinfo :` Affiche les infos du serveur.",
+        inline: false,
+      },
+      {
+        name: "Modération",
+      }
+    );
 
   message.channel.send({ embeds: [embedMesssage] });
 };
