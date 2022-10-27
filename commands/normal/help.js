@@ -27,6 +27,8 @@ module.exports.run = async (Client, message, args, prefix) => {
       },
       {
         name: "Modération",
+        value: "`-ban :` Ban un membre.",
+        inline: false,
       }
     );
 
