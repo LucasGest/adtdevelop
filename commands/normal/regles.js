@@ -20,10 +20,12 @@ module.exports.run = async (Client, message, args, prefix) => {
     .setThumbnail(message.guild.iconURL())
     .setDescription("Accepte");
 
-  const buttonCreate = new Discord.ButtonBuilder()
-    .setCustomId("primary")
-    .setLabel("Glouglou")
-    .setStyle(Discord.ButtonStyle.Primary);
+  //   const row = new Discord.ActionRowBuilder().addComponents(
+  //     new Discord.ButtonBuilder()
+  //       .setCustomId("primary")
+  //       .setLabel("Glouglou")
+  //       .setStyle(Discord.ButtonStyle.Primary)
+  //   );
 
   message.channel.send({ embeds: [embedMesssage] });
 };
