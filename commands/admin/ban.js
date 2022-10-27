@@ -5,6 +5,7 @@ const Client = new Discord.Client({
     Discord.GatewayIntentBits.GuildMessages,
     Discord.GatewayIntentBits.MessageContent,
     Discord.GatewayIntentBits.GuildMembers,
+    Discord.GatewayIntentBits.GuildBans,
   ],
 });
 
